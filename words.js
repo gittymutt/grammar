@@ -58,6 +58,11 @@ subjects.push(newsubj);
 
 var word = "every day";
 var tense = SPRES;
-var newtense = 
+//var newtense = 
 timePhrases.push({word:word, tense:tense});
-console.log("piss off");
+
+word = "on Sundays";
+tense = SPRES;
+timePhrases.push({word:word, tense:tense});
+
+
