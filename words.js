@@ -1,9 +1,13 @@
 var verbPhrases = [];
 var subjects = [];
+var timePhrases = [];
 
 var SING = 1;
 var PL = 2;
 var I = 0;
+var SPRES = 0;
+var PPROG = 1;
+
 
 
 // Insert verb phrase
@@ -50,3 +54,10 @@ subjects.push(newsubj);
 var newsubj = {word:"my friend's sister", number: SING};
 subjects.push(newsubj);
 
+// insert time phrases
+
+var word = "every day";
+var tense = SPRES;
+var newtense = 
+timePhrases.push({word:word, tense:tense});
+console.log("piss off");

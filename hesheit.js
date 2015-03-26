@@ -26,10 +26,11 @@ var index = 0;
 var newSent = function() {
     sindex = Math.floor(Math.random()*subjects.length);
     vindex = Math.floor(Math.random()*verbPhrases.length);
-    el.innerText = subjects[sindex]['word'] + " / " + verbPhrases[vindex]['BF'];
+    tindex =  Math.floor(Math.random()*timePhrases.length);
+    el.innerText = subjects[sindex]['word'] + " / " + verbPhrases[vindex]['BF'] + " / " + timePhrases[tindex]['word'];
 
     document.getElementById('simplePres').innerText= capitalizeFirstLetter(subjects[sindex]['word']) + " " + 
-getSimplePres(subjects[sindex], verbPhrases[vindex]) + ".";
+getSimplePres(subjects[sindex], verbPhrases[vindex]) + ".\n";
 
     document.getElementById('simplePres').innerText += capitalizeFirstLetter(subjects[sindex]['word']) + " " +
 	getNegSimplePres(subjects[sindex], verbPhrases[vindex]) + " " + verbPhrases[vindex]['BF'] + ".\n" ;
