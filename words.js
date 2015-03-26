@@ -32,6 +32,14 @@ var ingForm = "swimming";
 var verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
 verbPhrases.push(verbPhrase);
 
+BF = "drive";
+simplePres = "drives";
+simplePast = "drove";
+ingForm = "driving";
+verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
+verbPhrases.push(verbPhrase);
+
+
 // Insert subject
 var word = "he and I";
 var number = PL;
@@ -65,4 +73,12 @@ word = "on Sundays";
 tense = SPRES;
 timePhrases.push({word:word, tense:tense});
 
+
+word = "now";
+tense = PPROG;
+timePhrases.push({word:word, tense:tense});
+
+word = "at the moment";
+tense = PPROG;
+timePhrases.push({word:word, tense:tense});
 
