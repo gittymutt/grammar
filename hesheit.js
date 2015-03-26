@@ -11,8 +11,8 @@ function getSimplePres(theSubject, theVerbPhrase) {
 
 function getNegSimplePres(theSubject, theVerbPhrase) {
 	if (theVerbPhrase['simplePres'] == null) return "ERROR! Don't got a  negative simplePres!!";
-	if (theSubject['number'] != SING) return "do not";
-	return "does not";	
+	if (theSubject['number'] != SING) return "don't";
+	return "doesn't";	
 }
 
 function getSimplePresHelpingVerb(theSubject, theVerbPhrase) {
@@ -31,10 +31,10 @@ var newSent = function() {
     document.getElementById('simplePres').innerText= capitalizeFirstLetter(subjects[sindex]['word']) + " " + 
 getSimplePres(subjects[sindex], verbPhrases[vindex]) + ".";
 
-    document.getElementById('simplePres').innerHTML += capitalizeFirstLetter(subjects[sindex]['word']) + " " +
+    document.getElementById('simplePres').innerText += capitalizeFirstLetter(subjects[sindex]['word']) + " " +
 	getNegSimplePres(subjects[sindex], verbPhrases[vindex]) + " " + verbPhrases[vindex]['BF'] + ".\n" ;
 	
-document.getElementById('simplePres').innerHTML += capitalizeFirstLetter(getSimplePresHelpingVerb(subjects[sindex], verbPhrases[vindex])) + " " +
+    document.getElementById('simplePres').innerText += capitalizeFirstLetter(getSimplePresHelpingVerb(subjects[sindex], verbPhrases[vindex])) + " " +
 	  subjects[sindex]['word'] + " " + verbPhrases[vindex]['BF'] + "?" ;
 
 
