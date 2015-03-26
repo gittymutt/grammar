@@ -4,19 +4,19 @@ function capitalizeFirstLetter(string)
 }
 
 function getSimplePres(theSubject, theVerbPhrase) {
-	if (theVerbPhrase['simplePres'] == null) return "HOEBAG! Don't got a simplePres!!";
+	if (theVerbPhrase['simplePres'] == null) return "ERROR! Don't got a simplePres!!";
 	if (theSubject['number'] != SING) return theVerbPhrase['BF'];
 	return theVerbPhrase['simplePres'];	
 }
 
 function getNegSimplePres(theSubject, theVerbPhrase) {
-	if (theVerbPhrase['simplePres'] == null) return "HOEBAG! Don't got a  negative simplePres!!";
+	if (theVerbPhrase['simplePres'] == null) return "ERROR! Don't got a  negative simplePres!!";
 	if (theSubject['number'] != SING) return "do not";
 	return "does not";	
 }
 
 function getSimplePresHelpingVerb(theSubject, theVerbPhrase) {
-	if (theVerbPhrase['simplePres'] == null) return "HOEBAG! Don't got a simplePreshelping verb!!";
+	if (theVerbPhrase['simplePres'] == null) return "ERROR! Don't got a simplePreshelping verb!!";
 	if (theSubject['number'] != SING) return "do";
 	return "does";	
 }
