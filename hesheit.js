@@ -31,7 +31,7 @@ function getSimplePresHelpingVerb(theSubject, theVerbPhrase) {
 }
 
 function getSimplePast(theVerbPhrase) {
-	if (theVerbPhrase['simplePast'] == null) return "HOEBAG! Don't got a simplePres!!";
+	if (theVerbPhrase['simplePast'] == null) return "ERROR! Don't got a simplePast!!";
 	return theVerbPhrase['simplePast'];	
 }
 
@@ -41,38 +41,37 @@ var newSent = function() {
     sindex = Math.floor(Math.random()*subjects.length);
     vindex = Math.floor(Math.random()*verbPhrases.length);
     tindex =  Math.floor(Math.random()*timePhrases.length);
-    el.innerText = subjects[sindex]['word'] + " / " + verbPhrases[vindex]['BF'] + " / " + timePhrases[tindex]['word'];
+    el.innerHTML = "<span id=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
 
 
 
     if (timePhrases[tindex]['tense'] == SPRES) {
-    document.getElementById('simplePres').innerText= capitalizeFirstLetter(subjects[sindex]['word']) + " " + 
-getSimplePres(subjects[sindex], verbPhrases[vindex]) +  " " +
-    timePhrases[tindex]['word'] + ".\n";
+    document.getElementById('simplePres').innerHTML=  "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " + 
+ "<span id=\"verb\">" + getSimplePres(subjects[sindex], verbPhrases[vindex]) +  "</span> " +
+    timePhrases[tindex]['word'] + ".</br>";
 
-    document.getElementById('simplePres').innerText += capitalizeFirstLetter(subjects[sindex]['word']) + " " +
-	getNegSimplePres(subjects[sindex], verbPhrases[vindex]) + " " + verbPhrases[vindex]['BF'] + " " +
-    timePhrases[tindex]['word'] + ".\n" ;
+    document.getElementById('simplePres').innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
+	getNegSimplePres(subjects[sindex], verbPhrases[vindex]) + " " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span> " +
+    timePhrases[tindex]['word'] + ".</br>" ;
 	
-    document.getElementById('simplePres').innerText += capitalizeFirstLetter(getSimplePresHelpingVerb(subjects[sindex], verbPhrases[vindex])) + " " +
-	  subjects[sindex]['word'] + " " + verbPhrases[vindex]['BF'] +  " " +
+    document.getElementById('simplePres').innerHTML +=  capitalizeFirstLetter(getSimplePresHelpingVerb(subjects[sindex], verbPhrases[vindex])) +
+	 " <span id=\"subject\">" + subjects[sindex]['word'] + "</span> " + "<span id=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
     timePhrases[tindex]['word'] + "?" ;
     }
     
     if (timePhrases[tindex]['tense'] == PPROG) {
 
-        console.log("pres prog");
-        document.getElementById('simplePres').innerText = capitalizeFirstLetter(subjects[sindex]['word']) + " " +
-	getBe(subjects[sindex]) + " " + verbPhrases[vindex]['ingForm'] +  " " +
+        document.getElementById('simplePres').innerHTML = "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
+	getBe(subjects[sindex]) + " " +  "<span id=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
     timePhrases[tindex]['word'] + "."
-	+ "\n";
+	+ "</br>";
 	
-        document.getElementById('simplePres').innerText += capitalizeFirstLetter(subjects[sindex]['word']) + " " +
-	getBe(subjects[sindex]) + " not " + verbPhrases[vindex]['ingForm'] +  " " +
-    timePhrases[tindex]['word'] + ".\n";
+        document.getElementById('simplePres').innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
+	getBe(subjects[sindex]) + " not " +  "<span id=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
+    timePhrases[tindex]['word'] + ".</br>";
 	
-        document.getElementById('simplePres').innerText +=
-	capitalizeFirstLetter(getBe(subjects[sindex])) + " " + subjects[sindex]['word'] + " " + verbPhrases[vindex]['ingForm'] +  " " +
+        document.getElementById('simplePres').innerHTML +=
+	 capitalizeFirstLetter(getBe(subjects[sindex]))  + "<span id=\"subject\"> " + subjects[sindex]['word'] + "</span> " +  "<span id=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
     timePhrases[tindex]['word'] + "?";
     }
 
