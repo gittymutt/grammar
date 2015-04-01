@@ -69,7 +69,7 @@ var tense = SPRES;
 //var newtense = 
 timePhrases.push({word:word, tense:tense});
 
-word = "on Sundays";
+word = "twice a week";
 tense = SPRES;
 timePhrases.push({word:word, tense:tense});
 

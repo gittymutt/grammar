@@ -19,7 +19,7 @@ function getSimplePres(theSubject, theVerbPhrase) {
 }
 
 function getNegSimplePres(theSubject, theVerbPhrase) {
-	if (theVerbPhrase['simplePres'] == null) return "ERROR! Don't got a  negative simplePres!!";
+	if (theVerbPhrase['simplePres'] == null) return "ERROR! Don't got a negative simplePres!!";
 	if (theSubject['number'] != SING) return "don't";
 	return "doesn't";	
 }
@@ -36,11 +36,42 @@ function getSimplePast(theVerbPhrase) {
 }
 
 var el = document.getElementById("out");
+ document.getElementById('simplePres').innerHTML= "Click the button to get a new sentence."
 var index = 0;
+var buttText = document.getElementById("butt").innerText;
+var isShowing = false;
+var sindex,vindex,itindex;
+
+
 var newSent = function() {
-    sindex = Math.floor(Math.random()*subjects.length);
+
+
+if (!isShowing)
+{
+isShowing = true;
+console.log("not showing");
+
+ // randomly choose words from the list
+    sindex = Math.floor(Math.random()*subjects.length);    
     vindex = Math.floor(Math.random()*verbPhrases.length);
     tindex =  Math.floor(Math.random()*timePhrases.length);
+
+
+
+ el.innerHTML = "<span id=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
+
+ document.getElementById('simplePres').innerHTML= "Form sentences...";
+
+
+}
+else
+
+{
+    isShowing = false;
+    console.log("showing!!!");
+   
+     //document.getElementById('simplePres').style.visibility = "hidden";
+
     el.innerHTML = "<span id=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
 
 
@@ -76,7 +107,16 @@ var newSent = function() {
     }
 
 }
-
+}
 var buttEl = document.getElementById("butt");
 buttEl.onclick = newSent;
 
+
+var showWords = function () {
+    document.getElementById('simplePres').style.visibility = "";
+}
+
+
+
+document.getElementById('simplePres').innerHTML.onclick = showWords;
+ 
