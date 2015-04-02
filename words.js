@@ -39,6 +39,13 @@ ingForm = "driving";
 verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
 verbPhrases.push(verbPhrase);
 
+BF = "play";
+simplePres = "plays";
+simplePast = "played";
+ingForm = "playing";
+verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
+verbPhrases.push(verbPhrase);
+
 
 // Insert subject
 var word = "he and I";
@@ -73,6 +80,9 @@ word = "twice a week";
 tense = SPRES;
 timePhrases.push({word:word, tense:tense});
 
+word = "all the time";
+tense = SPRES;
+timePhrases.push({word:word, tense:tense});
 
 word = "now";
 tense = PPROG;
