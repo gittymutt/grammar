@@ -63,6 +63,17 @@ isShowing = true;
  el.innerHTML = "<span id=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
 
  disp.innerHTML = "What are the sentences?";
+    disp.innerHTML=  "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> <span id=\"verb\">????????</span> " + timePhrases[tindex]['word'] + ". (Affirmative)</br>";
+
+    disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +  "<span id=\"verb\"> ?????????????? </span> " +
+    timePhrases[tindex]['word'] + ". (Negative)</br>" ;
+	
+   disp.innerHTML +=  "????" +
+	 " <span id=\"subject\">" + subjects[sindex]['word'] + "</span> " + "<span id=\"verb\">" + " ???????? "+  "</span> " +
+    timePhrases[tindex]['word'] + "? (Yes/No Question)" ;
+    
+
+
 
 
 }
