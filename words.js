@@ -7,6 +7,7 @@ var PL = 2;
 var I = 0;
 var SPRES = 0;
 var PPROG = 1;
+var SPAST = 2;
 
 
 
@@ -90,5 +91,9 @@ timePhrases.push({word:word, tense:tense});
 
 word = "at the moment";
 tense = PPROG;
+timePhrases.push({word:word, tense:tense});
+
+word = "yesterday";
+tense = SPAST;
 timePhrases.push({word:word, tense:tense});
 

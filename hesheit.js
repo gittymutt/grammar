@@ -118,6 +118,23 @@ else
     timePhrases[tindex]['word'] + "?";
     }
 
+    if (timePhrases[tindex]['tense'] == SPAST) {
+
+       disp.innerHTML = "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> "  + " " 
+           +  "<span id=\"verb\">" + verbPhrases[vindex]['simplePast'] +  "</span> " +
+    timePhrases[tindex]['word'] + "."
+	+ "</br>";
+	
+       disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " + "didn't "
++  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
+    timePhrases[tindex]['word'] + ".</br>";
+	
+       disp.innerHTML +=
+	 capitalizeFirstLetter("did")  + "<span id=\"subject\"> " + subjects[sindex]['word'] + "</span> " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
+    timePhrases[tindex]['word'] + "?";
+    }
+    
+
 }
 }
 var buttEl = document.getElementById("butt");
