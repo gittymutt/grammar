@@ -1,15 +1,12 @@
-function capitalizeFirstLetter(string)
-{
+function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
 
 function getBe(theSubject) {
 	if (theSubject['number'] == I) return "am";
 	if (theSubject['number'] == SING) return "is";
 	if (theSubject['number'] == PL) return "are";
 	return "Error: Couldn't get form of BE";
-	
 }
 
 function getSimplePres(theSubject, theVerbPhrase) {
@@ -36,7 +33,7 @@ function getSimplePast(theVerbPhrase) {
 }
 
 var el = document.getElementById("out");
- document.getElementById('simplePres').innerHTML= "Click the button to get a new sentence."
+document.getElementById('simplePres').innerHTML= "Click the button to get a new sentence."
 
 var disp =  document.getElementById('simplePres');
 var index = 0;
@@ -50,10 +47,9 @@ var newSent = function() {
 
 if (!isShowing)
 {
-isShowing = true;
-//console.log("not showing");
+    isShowing = true;
 
- // randomly choose words from the list
+    // randomly choose words from the list
     sindex = Math.floor(Math.random()*subjects.length);    
     vindex = Math.floor(Math.random()*verbPhrases.length);
     tindex =  Math.floor(Math.random()*timePhrases.length);
@@ -65,7 +61,6 @@ isShowing = true;
 console.log(el.innerHTML);
 
 
-// disp.innerHTML = "What are the sentences?";
     disp.innerHTML=  "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> <span id=\"verb\">????????</span> " + timePhrases[tindex]['word'] + ". (Affirmative)</br>";
 
     disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +  "<span id=\"verb\"> ?????????????? </span> " +
@@ -84,8 +79,6 @@ else
 
 {
     isShowing = false;
-    //console.log("showing!!!");
-   
     
     el.innerHTML = "<span id=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
 
