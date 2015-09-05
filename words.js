@@ -74,7 +74,6 @@ subjects.push(newsubj);
 
 var word = "every day";
 var tense = SPRES;
-//var newtense = 
 timePhrases.push({word:word, tense:tense});
 
 word = "twice a week";
@@ -94,6 +93,14 @@ tense = PPROG;
 timePhrases.push({word:word, tense:tense});
 
 word = "yesterday";
+tense = SPAST;
+timePhrases.push({word:word, tense:tense});
+
+word = "last week";
+tense = SPAST;
+timePhrases.push({word:word, tense:tense});
+
+word = "three days ago";
 tense = SPAST;
 timePhrases.push({word:word, tense:tense});
 
