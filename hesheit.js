@@ -56,18 +56,18 @@ if (!isShowing)
 
 
 
- el.innerHTML = "<span id=\"subject\">" +  subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
+ el.innerHTML = "<span class=\"subject\">" +  subjects[sindex]['word'] + "</span> / " +  "<span class=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
 
 console.log(el.innerHTML);
 
 
-    disp.innerHTML=  "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> <span id=\"verb\">????????</span> " + timePhrases[tindex]['word'] + ". (Affirmative)</br>";
+    disp.innerHTML=  "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> <span class=\"verb\">????????</span> " + timePhrases[tindex]['word'] + ". (Affirmative)</br>";
 
-    disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +  "<span id=\"verb\"> ?????????????? </span> " +
+    disp.innerHTML += "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +  "<span class=\"verb\"> ?????????????? </span> " +
     timePhrases[tindex]['word'] + ". (Negative)</br>" ;
 	
-   disp.innerHTML += "<span id=\"verb\">" +  "????" + "</span>" +
-	 " <span id=\"subject\">" + subjects[sindex]['word'] + "</span> " + "<span id=\"verb\">" + " ???????? "+  "</span> " +
+   disp.innerHTML += "<span class=\"verb\">" +  "????" + "</span>" +
+	 " <span class=\"subject\">" + subjects[sindex]['word'] + "</span> " + "<span class=\"verb\">" + " ???????? "+  "</span> " +
     timePhrases[tindex]['word'] + "? (Yes/No Question)" ;
     
 
@@ -80,53 +80,53 @@ else
 {
     isShowing = false;
     
-    el.innerHTML = "<span id=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
+    el.innerHTML = "<span class=\"subject\">" + subjects[sindex]['word'] + "</span> / " +  "<span class=\"verb\">" + verbPhrases[vindex]['BF'] + "</span>" + " / " + timePhrases[tindex]['word'];
 
 
 
     if (timePhrases[tindex]['tense'] == SPRES) {
-   disp.innerHTML=  "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " + 
- "<span id=\"verb\">" + getSimplePres(subjects[sindex], verbPhrases[vindex]) +  "</span> " +
+   disp.innerHTML=  "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " + 
+ "<span class=\"verb\">" + getSimplePres(subjects[sindex], verbPhrases[vindex]) +  "</span> " +
     timePhrases[tindex]['word'] + ".</br>";
 
-    disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
-	getNegSimplePres(subjects[sindex], verbPhrases[vindex]) + " " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] + "</span> " +
+    disp.innerHTML += "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
+	getNegSimplePres(subjects[sindex], verbPhrases[vindex]) + " " +  "<span class=\"verb\">" + verbPhrases[vindex]['BF'] + "</span> " +
     timePhrases[tindex]['word'] + ".</br>" ;
 	
-   disp.innerHTML +=  "<span id=\"verb\">" + capitalizeFirstLetter(getSimplePresHelpingVerb(subjects[sindex], verbPhrases[vindex])) + "</span>"
-       + " <span id=\"subject\">" + subjects[sindex]['word'] + "</span> " + "<span id=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
+   disp.innerHTML +=  "<span class=\"verb\">" + capitalizeFirstLetter(getSimplePresHelpingVerb(subjects[sindex], verbPhrases[vindex])) + "</span>"
+       + " <span class=\"subject\">" + subjects[sindex]['word'] + "</span> " + "<span class=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
     timePhrases[tindex]['word'] + "?" ;
     }
     
     if (timePhrases[tindex]['tense'] == PPROG) {
 
-       disp.innerHTML = "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
-	getBe(subjects[sindex]) + " " +  "<span id=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
+       disp.innerHTML = "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
+	getBe(subjects[sindex]) + " " +  "<span class=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
     timePhrases[tindex]['word'] + "."
 	+ "</br>";
 	
-       disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
-	getBe(subjects[sindex]) + " not " +  "<span id=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
+       disp.innerHTML += "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " +
+	getBe(subjects[sindex]) + " not " +  "<span class=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
     timePhrases[tindex]['word'] + ".</br>";
 	
-       disp.innerHTML +=  "<span id=\"verb\">" +
-	 capitalizeFirstLetter(getBe(subjects[sindex])) + "</span>" + "<span id=\"subject\"> " + subjects[sindex]['word'] + "</span> " +  "<span id=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
+       disp.innerHTML +=  "<span class=\"verb\">" +
+	 capitalizeFirstLetter(getBe(subjects[sindex])) + "</span>" + "<span class=\"subject\"> " + subjects[sindex]['word'] + "</span> " +  "<span class=\"verb\">" + verbPhrases[vindex]['ingForm'] +  "</span> " +
     timePhrases[tindex]['word'] + "?";
     }
 
     if (timePhrases[tindex]['tense'] == SPAST) {
 
-       disp.innerHTML = "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> "  + " " 
-           +  "<span id=\"verb\">" + verbPhrases[vindex]['simplePast'] +  "</span> " +
+       disp.innerHTML = "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> "  + " " 
+           +  "<span class=\"verb\">" + verbPhrases[vindex]['simplePast'] +  "</span> " +
     timePhrases[tindex]['word'] + "."
 	+ "</br>";
 	
-       disp.innerHTML += "<span id=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " + "didn't "
-+  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
+       disp.innerHTML += "<span class=\"subject\">" + capitalizeFirstLetter(subjects[sindex]['word']) + "</span> " + "didn't "
++  "<span class=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
     timePhrases[tindex]['word'] + ".</br>";
 	
-       disp.innerHTML +=  "<span id=\"verb\">" + 
-	 capitalizeFirstLetter("did") + "</span>" + "<span id=\"subject\"> " + subjects[sindex]['word'] + "</span> " +  "<span id=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
+       disp.innerHTML +=  "<span class=\"verb\">" + 
+	 capitalizeFirstLetter("did") + "</span>" + "<span class=\"subject\"> " + subjects[sindex]['word'] + "</span> " +  "<span class=\"verb\">" + verbPhrases[vindex]['BF'] +  "</span> " +
     timePhrases[tindex]['word'] + "?";
     }
     
