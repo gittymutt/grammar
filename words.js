@@ -10,97 +10,35 @@ var PPROG = 1;
 var SPAST = 2;
 
 
+// List of verbs
 
-// Insert verb phrase
-var BF = "sing";
-var simplePres = "sings";
-var simplePast = "sang";
-var ingForm = "singing"
-var verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
-verbPhrases.push(verbPhrase);
+verbPhrases.push({BF: "sing", simplePast: "sings", ingForm: "singing", simplePres: "sings"});
+verbPhrases.push({BF: "sing", simplePast: "sang", ingForm: "singing", simplePres: "sings"});
+verbPhrases.push({BF: "go", simplePast: "went", ingForm: "going", simplePres: "goes"});
+verbPhrases.push({BF: "swim", simplePast: "swam", ingForm: "swimming", simplePres: "swims"});
+verbPhrases.push({BF: "drive", simplePast: "drove", ingForm: "driving", simplePres: "drives"});
+verbPhrases.push({BF: "play", simplePast: "played", ingForm: "playing", simplePres: "plays"});
 
-var BF = "go";
-var simplePres = "goes";
-var simplePast = "went";
-var ingForm = "going";
-var verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
-verbPhrases.push(verbPhrase);
+//list of nouns
 
-var BF = "swim";
-var simplePres = "swims";
-var simplePast = "swam";
-var ingForm = "swimming";
-var verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
-verbPhrases.push(verbPhrase);
+subjects.push({word: "Mr. Bean", number: SING});
+subjects.push({word: "he and I", number: PL});
+subjects.push({word: "I", number: I});
+subjects.push({word: "they", number: PL});
+subjects.push({word: "my friend's sister", number: SING});
 
-BF = "drive";
-simplePres = "drives";
-simplePast = "drove";
-ingForm = "driving";
-verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
-verbPhrases.push(verbPhrase);
+// List of time phrases
 
-BF = "play";
-simplePres = "plays";
-simplePast = "played";
-ingForm = "playing";
-verbPhrase = {BF: BF, simplePast: simplePast, ingForm: ingForm, simplePres: simplePres };
-verbPhrases.push(verbPhrase);
+timePhrases.push({word: "every day", tense: SPRES});
+timePhrases.push({word: "twice a week", tense: SPRES});
+timePhrases.push({word: "all the time", tense: SPRES});
+timePhrases.push({word: "now", tense: PPROG});
+timePhrases.push({word: "at the moment", tense: PPROG});
+timePhrases.push({word: "yesterday", tense: SPAST});
+timePhrases.push({word: "last week", tense: SPAST});
+timePhrases.push({word: "three days ago", tense: SPAST});
 
 
-// Insert subject
-var word = "he and I";
-var number = PL;
-var subject = {word: word, number: number};
-subjects.push(subject);
 
-var word = "Mr. Bean";
-var number = SING;
-var subject = {word: word, number: number};
-subjects.push(subject);
 
-var word = "I";
-var number = I;
-var subject = {word: word, number: number};
-subjects.push(subject);
-
-var newsubj = {word:"they", number: PL};
-subjects.push(newsubj);
-
-var newsubj = {word:"my friend's sister", number: SING};
-subjects.push(newsubj);
-
-// insert time phrases
-
-var word = "every day";
-var tense = SPRES;
-timePhrases.push({word:word, tense:tense});
-
-word = "twice a week";
-tense = SPRES;
-timePhrases.push({word:word, tense:tense});
-
-word = "all the time";
-tense = SPRES;
-timePhrases.push({word:word, tense:tense});
-
-word = "now";
-tense = PPROG;
-timePhrases.push({word:word, tense:tense});
-
-word = "at the moment";
-tense = PPROG;
-timePhrases.push({word:word, tense:tense});
-
-word = "yesterday";
-tense = SPAST;
-timePhrases.push({word:word, tense:tense});
-
-word = "last week";
-tense = SPAST;
-timePhrases.push({word:word, tense:tense});
-
-word = "three days ago";
-tense = SPAST;
-timePhrases.push({word:word, tense:tense});
 
